@@ -18,7 +18,6 @@
       --highlight: #D9A036;      /* Ocre / Sol */
       --denim: #4A5D75;          /* Denim Deslavado */
       
-      /* TUS TIPOGRAFÍAS */
       --font-title: 'DM Serif Display', serif;
       --font-body: 'Karla', sans-serif;
       --font-hand: 'Caveat', cursive;
@@ -31,11 +30,20 @@
       background-color: var(--bg-color);
       color: var(--text-color);
       line-height: 1.6;
-      /* Truco de ruido/grano sutil */
       background-image: linear-gradient(var(--bg-color), var(--bg-color)), url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+      overflow-x: hidden;
+      transition: background-color 0.5s ease;
     }
 
-    /* --- ENCABEZADO --- */
+    /* --- CLASES COMUNES --- */
+    .fade-in { animation: fadeIn 1.2s ease forwards; opacity: 0; }
+    @keyframes fadeIn { to { opacity: 1; } }
+
+    /* --- LADO B (WEB VISIBLE) --- */
+    #side-b {
+      transition: opacity 0.5s ease;
+    }
+
     header {
       display: flex;
       flex-direction: column;
@@ -57,8 +65,8 @@
 
     h1 {
       font-family: var(--font-title);
-      font-size: 2.4rem; /* Un poco más grande para DM Serif */
-      font-weight: 400; /* DM Serif es gruesa por defecto */
+      font-size: 2.4rem;
+      font-weight: 400;
       color: var(--text-color);
       letter-spacing: 0.5px;
       margin-bottom: 0.2rem;
@@ -71,7 +79,6 @@
       margin-bottom: 1.5rem;
     }
 
-    /* --- BOTONES --- */
     .links-container {
       display: flex;
       flex-direction: column;
@@ -111,7 +118,6 @@
       box-shadow: 2px 2px 0px var(--highlight);
     }
 
-    /* --- SECCIONES --- */
     section {
       max-width: 600px;
       margin: 0 auto;
@@ -133,7 +139,6 @@
       color: #555;
     }
 
-    /* --- IFRAME --- */
     iframe {
       border-radius: 12px;
       width: 100%;
@@ -142,10 +147,9 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
-    /* --- CONTACTO & FOOTER --- */
     .contact-link {
       font-family: var(--font-hand);
-      font-size: 2rem; /* Caveat necesita ser un poco más grande para leerse bien */
+      font-size: 2rem;
       color: var(--text-color);
       text-decoration: none;
       border-bottom: 2px solid var(--highlight);
@@ -163,58 +167,231 @@
     .footer-signature {
       font-family: var(--font-hand);
       font-size: 1.6rem;
-      display: block;
-      margin-top: 0.5rem;
+      /* Usamos Flexbox para alinear texto e ícono perfectamente */
+      display: inline-flex; 
+      align-items: center;
+      gap: 8px; /* Espacio entre texto e ícono */
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
-    .fade-in {
-      animation: fadeIn 1.2s ease forwards;
-      opacity: 0;
+    /* --- EL SECRETO (CASSETTE SVG) --- */
+    #cassette-trigger {
+      cursor: help;
+      width: 28px;  /* Tamaño del cassette */
+      height: 28px;
+      transition: all 0.3s ease;
+      color: var(--text-color); /* Color inicial */
     }
-    @keyframes fadeIn {
-      to { opacity: 1; }
+    #cassette-trigger:hover {
+      transform: scale(1.2) rotate(10deg);
+      color: var(--accent-color); /* Cambia a Terracota al pasar el mouse */
+      filter: drop-shadow(0px 0px 5px rgba(192, 88, 73, 0.5));
+    }
+
+    /* --- LADO A (OCULTO) --- */
+    #side-a {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+      min-height: 100vh;
+      animation: fadeIn 1s ease;
+    }
+
+    .side-a-content {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 2rem;
+    }
+
+    .side-a-img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 4px;
+      border: 10px solid #fff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      transform: rotate(-2deg);
+      margin-bottom: 2rem;
+    }
+
+    .side-a-title {
+      font-family: var(--font-title);
+      font-size: 3rem;
+      color: var(--accent-color);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .side-a-subtitle {
+      font-family: var(--font-hand);
+      font-size: 2rem;
+      color: var(--text-color);
+      margin-bottom: 2rem;
+    }
+
+    .presave-btn {
+      background-color: #1DB954; /* Verde Spotify */
+      color: #fff;
+      font-weight: 700;
+      padding: 1.2rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      box-shadow: 0 5px 15px rgba(29, 185, 84, 0.4);
+      transition: transform 0.2s;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+    .presave-btn:hover {
+      transform: scale(1.05);
+      background-color: #1ed760;
+    }
+
+    .back-btn {
+      margin-top: 2rem;
+      background: none;
+      border: none;
+      color: var(--denim);
+      font-family: var(--font-body);
+      cursor: pointer;
+      text-decoration: underline;
+      font-size: 0.9rem;
+    }
+
+    /* --- EFECTOS VISUALES (GLITCH) --- */
+    .glitch-active body { background-color: #111; }
+    
+    .glitch-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(0,0,0,0.15),
+        rgba(0,0,0,0.15) 1px,
+        transparent 1px,
+        transparent 2px
+      );
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    .shaking {
+      animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both infinite;
+    }
+
+    @keyframes shake {
+      10%, 90% { transform: translate3d(-1px, 0, 0); }
+      20%, 80% { transform: translate3d(2px, 0, 0); }
+      30%, 50%, 70% { transform: translate3d(-4px, 0, 0); filter: invert(1); }
+      40%, 60% { transform: translate3d(4px, 0, 0); }
     }
   </style>
 </head>
 <body>
 
-  <header class="fade-in">
-    <img src="FerWeb.jpg" alt="Fer Fernandez">
-    
-    <h1>FER FERNANDEZ</h1>
-    <p class="subtitle">auténtico, clásico y sin prisa.<br>Un nuevo viaje comienza ⏳</p>
+  <div id="glitch-layer" class="glitch-overlay"></div>
 
-    <div class="links-container">
-      <a href="https://open.spotify.com/intl-es/artist/5sKYvbARBCdgQi2hxZHd5t?si=3PgNscTGSX2uE57Tgc-K3g" target="_blank" class="link-btn highlight">
-        🎧 Escuchar en Spotify
+  <div id="side-b">
+    <header class="fade-in">
+      <img src="FerWeb.jpg" alt="Fer Fernandez">
+      
+      <h1>FER FERNANDEZ</h1>
+      <p class="subtitle">auténtico, clásico y sin prisa.<br>Un nuevo viaje comienza ⏳</p>
+
+      <div class="links-container">
+        <a href="https://open.spotify.com/intl-es/artist/5sKYvbARBCdgQi2hxZHd5t?si=3PgNscTGSX2uE57Tgc-K3g" target="_blank" class="link-btn highlight">
+          🎧 Escuchar en Spotify
+        </a>
+        <a href="https://www.youtube.com/@FerFeernandez" target="_blank" class="link-btn">
+          📺 Canal de YouTube
+        </a>
+        <a href="https://www.instagram.com/ferfernandez__/" target="_blank" class="link-btn">
+          📸 Seguir en Instagram
+        </a>
+      </div>
+    </header>
+
+    <section id="musica" class="fade-in" style="animation-delay: 0.2s;">
+      <h2>Último Lanzamiento</h2>
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/5sKYvbARBCdgQi2hxZHd5t?utm_source=generator&theme=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </section>
+
+    <section id="contacto" class="fade-in" style="animation-delay: 0.4s;">
+      <h2>Hablemos</h2>
+      <p>Para contrataciones o simplemente saludar:</p>
+      <a href="mailto:contactoferfernandez@gmail.com" class="contact-link">contactoferfernandez@gmail.com</a>
+    </section>
+
+    <footer>
+      <p>© 2025 Fer Fernandez</p>
+      <span class="footer-signature">
+        Desde Catamarca para cada rincón del mundo 🌎
+        <svg id="cassette-trigger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" title="¿Lado A?">
+          <rect x="2" y="4" width="20" height="16" rx="2" />
+          <circle cx="8" cy="12" r="2" />
+          <circle cx="16" cy="12" r="2" />
+          <path d="M6 12h12" />
+        </svg>
+      </span>
+    </footer>
+  </div>
+
+  <div id="side-a">
+    <div class="side-a-content">
+      <img src="lado_a.jpg" alt="Lado A - Intimo" class="side-a-img">
+      
+      <h1 class="side-a-title">LADO A</h1>
+      <p class="side-a-subtitle">El comienzo de mi historia.</p>
+      
+      <p style="margin-bottom: 2rem; max-width: 400px;">
+        Descubriste la parte real. Sin filtros, sin prisa. 
+        Este EP son 5 canciones que escribí cuando nadie miraba.
+      </p>
+
+      <a href="https://open.spotify.com/artist/TU_ARTISTA_ID" target="_blank" class="presave-btn">
+        💚 PRE-SAVE EN SPOTIFY
       </a>
-      <a href="https://www.youtube.com/@FerFeernandez" target="_blank" class="link-btn">
-        📺 Canal de YouTube
-      </a>
-      <a href="https://www.instagram.com/ferfernandez__/" target="_blank" class="link-btn">
-        📸 Seguir en Instagram
-      </a>
+
+      <br>
+      <button id="back-to-b" class="back-btn">← Volver al ruido</button>
     </div>
-  </header>
+  </div>
 
-  <section id="musica" class="fade-in" style="animation-delay: 0.2s;">
-    <h2>Último Lanzamiento</h2>
-    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/5sKYvbARBCdgQi2hxZHd5t?utm_source=generator&theme=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-  </section>
+  <script>
+    const cassette = document.getElementById('cassette-trigger');
+    const sideB = document.getElementById('side-b');
+    const sideA = document.getElementById('side-a');
+    const glitchLayer = document.getElementById('glitch-layer');
+    const backBtn = document.getElementById('back-to-b');
+    const body = document.body;
 
-  <section id="contacto" class="fade-in" style="animation-delay: 0.4s;">
-    <h2>Hablemos</h2>
-    <p>Para contrataciones o simplemente saludar:</p>
-    <a href="mailto:contactoferfernandez@gmail.com" class="contact-link">contactoferfernandez@gmail.com</a>
-  </section>
+    // Activar Lado A
+    cassette.addEventListener('click', () => {
+      glitchLayer.style.display = 'block';
+      sideB.classList.add('shaking');
+      
+      setTimeout(() => {
+        sideB.style.display = 'none';
+        sideB.classList.remove('shaking');
+        glitchLayer.style.display = 'none';
+        sideA.style.display = 'block';
+        body.style.backgroundColor = '#EAE6D6'; // Fondo más cálido para Lado A
+        window.scrollTo(0,0);
+      }, 1000);
+    });
 
-  <footer>
-    <p>© 2025 Fer Fernandez</p>
-    <span class="footer-signature">Desde Catamarca para cada rincón del mundo 🌎</span>
-  </footer>
+    // Volver a Lado B
+    backBtn.addEventListener('click', () => {
+      sideA.style.display = 'none';
+      sideB.style.display = 'block';
+      body.style.backgroundColor = '#F5F5F0'; // Fondo original
+    });
+  </script>
 
 </body>
 </html>
-
-
-
