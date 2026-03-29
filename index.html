@@ -3,42 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fer Fernandez | Rock/Pop</title>
+    <title>Fer Fernandez | Pop/Rock</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@700&family=Oswald:wght@500;700&family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
     <header>
-        <nav>
+        <nav class="nav-container">
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Inicio</a></li>
-                <li><a href="fechas.html">Fechas</a></li>
-                <li><a href="musica.html">Música & Letras</a></li>
-                <li><a href="epk.html">Prensa</a></li>
+                <li><a href="#inicio" class="active">Inicio</a></li>
+                <li><a href="#bio">Bio</a></li>
+                <li><a href="#discografia">Discografía</a></li>
+                <li><a href="#fechas">Fechas</a></li>
             </ul>
+            <div class="social-icons-header">
+                <a href="https://www.instagram.com/ferfernandez__/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@FerFeernandez" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://open.spotify.com/intl-es/artist/5sKYvbARBCdgQi2hxZHd5t?si=v5TDRo8yQGmxiNF0Ey2v_A" target="_blank"><i class="fab fa-spotify"></i></a>
+            </div>
         </nav>
     </header>
 
-    <main class="hero-section">
+    <main id="inicio" class="hero-section">
+        <video autoplay loop muted playsinline class="hero-video">
+            <source src="img/MMCANVAEDIT.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+
         <div class="hero-content">
             <h1 class="logo-title">FER FERNANDEZ</h1>
             <p class="subtitle">• Un nuevo comienzo •</p>
             
             <img src="img/F1_MM_Foto1.jpg" alt="Fer Fernandez" class="hero-image">
-            
-            <div class="spotify-container">
+
+            <div class="spotify-container" style="margin-top: 20px;">
                 <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/5sKYvbARBCdgQi2hxZHd5t?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
             <br>
             
-            <a href="musica.html" class="btn-primary">Ver Catálogo Completo</a>
+            <a href="#bio" class="btn-primary">Conocer Más</a>
         </div>
     </main>
 
+    <section id="bio" class="epk-section section-padding">
+        <h2 class="section-title">BIO</h2>
+        <p class="subtitle">...</p>
+
+        <div class="bio-top-layout">
+            
+            <div class="carousel-container">
+                <div class="carousel-slide active"><img src="img/F1_Tocadas_Foto1.jpg" alt="Fer Fernandez en vivo 1"></div>
+                <div class="carousel-slide"><img src="img/F1_Tocadas_Foto2.jpg" alt="Fer Fernandez en vivo 2"></div>
+                <div class="carousel-slide"><img src="img/F1_Tocadas_Foto3.jpg" alt="Fer Fernandez en vivo 3"></div>
+                <div class="carousel-slide"><img src="img/F1_Tocadas_Foto4.jpg" alt="Fer Fernandez en vivo 4"></div>
+                <div class="carousel-slide"><img src="img/F1_Tocadas_Foto5.jpg" alt="Fer Fernandez en vivo 5"></div>
+                <div class="carousel-slide"><img src="img/F1_Tocadas_Foto6.jpg" alt="Fer Fernandez en vivo 6"></div>
+                <div class="carousel-slide"><img src="img/F1_Tocadas_Foto7.jpg" alt="Fer Fernandez en vivo 7"></div>
+                <div class="carousel-slide"><img src="img/F1_Tocadas_Foto8.jpg" alt="Fer Fernandez en vivo 8"></div>
+                
+                <button class="carousel-btn prev" onclick="moveSlide(-1)">❮</button>
+                <button class="carousel-btn next" onclick="moveSlide(1)">❯</button>
+            </div>
+
+            <div class="epk-bio">
+                <h3>BIO</h3>
+                <p>Fer Fernandez es un cantautor nacido en Catamarca, Argentina. Su música se define de manera simple y directa: pop/rock de autor y "compañía de ruta". Con un sonido orgánico y sin mayores pretensiones, el proyecto busca conectar historias con el público a traves de canciones.</p>
+                <p>Un proyecto impulsado por el esfuerzo independiente y la claridad de saber hacia dónde va su sonido.</p>
+            </div>
+            
+        </div> <div class="bio-bottom-layout">
+            
+            <div class="epk-assets">
+                <h3>Recursos Descargables</h3>
+                <ul class="asset-list">
+                    <li>
+                        <span class="asset-name">Gacetilla de Prensa (PDF)</span>
+                        <a href="#" class="btn-download" download>Descargar</a>
+                    </li>
+                    <li>
+                        <span class="asset-name">Fotos Oficiales (Alta Resolución)</span>
+                        <a href="#" class="btn-download" download>Descargar .ZIP</a>
+                    </li>
+                    <li>
+                        <span class="asset-name">Stage Plot & Rider Técnico</span>
+                        <a href="#" class="btn-download" download>Descargar PDF</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="epk-contact">
+                <h3>Contacto / Booking</h3>
+                <p>Para mas información:</p>
+                <a href="mailto:contactoferfernandez@gmail.com" class="contact-email">contactoferfernandez@gmail.com</a>
+            </div>
+
+        </div> </section>
+
+    <section id="discografia" class="music-section section-padding">
+        <h2 class="section-title">DISCOGRAFÍA</h2>
+        <p class="subtitle">Disponibles en todas las plataformas digitales.</p>
+
+        <div class="music-grid">
+            <div class="music-card">
+                <img src="img/TAPA_ES.jpeg" alt="Portada Encontrarme Siempre" class="album-cover">
+                <h3 class="song-title">Encontrarme Siempre</h3>
+                <p class="song-type">• Sencillo •</p>
+                <div class="music-links">
+                    <a href="https://open.spotify.com/intl-es/track/11Of86WI2irCYDrp8mbJTM?si=c8c7c3e6cdc84e13" class="btn-listen" target="_blank">Escuchar</a>
+                    <a href="https://www.musixmatch.com/es/letras/Fer-Fernandez-1/Encontrarme-Siempre" class="btn-lyrics" target="_blank">Leer Letra</a>
+                </div>
+                <div class="filmstrip-container">
+                    <img src="img/F1_ES_Foto2.jpg" alt="Detrás de escena 1" class="filmstrip-item">
+                    <img src="img/F1_ES_Foto4.jpg" alt="Detrás de escena 2" class="filmstrip-item">
+                    <img src="img/F1_ES_Foto1.jpg" alt="Detrás de escena 3" class="filmstrip-item">
+                </div>
+            </div>
+
+            <div class="music-card">
+                <img src="img/TAPA_AQETSA.jpeg" alt="Portada Antes que el tiempo se acabe" class="album-cover">
+                <h3 class="song-title">Antes que el tiempo se acabe</h3>
+                <p class="song-type">• Sencillo •</p>
+                <div class="music-links">
+                    <a href="https://open.spotify.com/intl-es/track/7Lubt8xwUuqJBMiQsodtnj?si=f21e5816d0b2434f" class="btn-listen" target="_blank">Escuchar</a>
+                    <a href="https://www.musixmatch.com/lyrics/Fer-Fernandez-1/Antes-Que-el-Tiempo-Se-Acabe" class="btn-lyrics" target="_blank">Leer Letra</a>
+                </div>
+                <div class="filmstrip-container">
+                    <img src="img/F1_AQETSA_Foto2.jpg" alt="Detrás de escena 1" class="filmstrip-item">
+                    <img src="img/F1_AQETSA_Foto3.jpg" alt="Detrás de escena 2" class="filmstrip-item">
+                    <img src="img/F1_AQETSA_Foto1.jpg" alt="Detrás de escena 3" class="filmstrip-item">
+                </div>
+            </div>
+
+            <div class="music-card">
+                <img src="img/TAPA_MM.jpeg" alt="Portada Mas y Mas" class="album-cover">
+                <h3 class="song-title">Mas y Mas</h3>
+                <p class="song-type">• Sencillo •</p>
+                <div class="music-links">
+                    <a href="https://open.spotify.com/intl-es/track/0pk4zaGvkV3UGowrZjsS2c?si=401f7e5a816f4d7e" class="btn-listen" target="_blank">Escuchar</a>
+                    <a href="https://www.musixmatch.com/lyrics/Fer-Fernandez-2/Mas-y-Mas" class="btn-lyrics" target="_blank">Leer Letra</a>
+                </div>
+                <div class="filmstrip-container">
+                    <img src="img/F1_MM_Foto2.jpg" alt="Detrás de escena 1" class="filmstrip-item">
+                    <img src="img/F1_MM_Foto3.jpg" alt="Detrás de escena 2" class="filmstrip-item">
+                    <img src="img/F1_MM_Foto5.JPG" alt="Detrás de escena 3" class="filmstrip-item">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="fechas" class="tour-section section-padding">
+        <h2 class="section-title">FECHAS</h2>
+        <p class="subtitle">Un nuevo comienzo en el escenario.</p>
+
+        <div class="tour-list">
+            <div class="tour-item upcoming">
+                <div class="tour-date">Julio 2026</div>
+                <div class="tour-venue">Fiesta Nacional del Poncho</div>
+                <div class="tour-location">Catamarca, Arg</div>
+                <div class="tour-action"><span class="btn-secondary">A Confirmar</span></div>
+            </div>
+            <div class="tour-item past">
+                <div class="tour-date">23 Dic 2025</div>
+                <div class="tour-venue">Espacio Cultivo (Formato Trío)</div>
+                <div class="tour-location">Catamarca, Arg</div>
+                <div class="tour-action"><span class="status-text">Finalizado</span></div>
+            </div>
+        </div>
+
+        <div class="subscribe-banner">
+            <h3>No te pierdas de nada</h3>
+            <p>Dejá tu correo para enterarte de nuevas fechas, lanzamientos y material exclusivo.</p>
+            <form action="https://formspree.io/f/xkopjkpg" method="POST" class="subscribe-form">
+                <input type="email" placeholder="Escribí tu correo acá..." required>
+                <button type="submit" class="btn-listen">Suscribirme</button>
+            </form>
+        </div>
+    </section>
+
     <footer>
+        <div class="social-icons-footer">
+            <a href="https://www.instagram.com/ferfernandez__/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@FerFeernandez" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://open.spotify.com/intl-es/artist/5sKYvbARBCdgQi2hxZHd5t?si=v5TDRo8yQGmxiNF0Ey2v_A" target="_blank"><i class="fab fa-spotify"></i></a>
+        </div>
         <p>© 2026 Fer Fernandez. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        // Lógica del Carrusel
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+
+        function moveSlide(n) {
+            slides[slideIndex].classList.remove('active');
+            slideIndex += n;
+            if (slideIndex >= slides.length) { slideIndex = 0; }
+            if (slideIndex < 0) { slideIndex = slides.length - 1; }
+            slides[slideIndex].classList.add('active');
+        }
+
+        // Navegación Suave (Smooth Scroll)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+                this.classList.add('active');
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
