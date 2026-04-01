@@ -11,7 +11,7 @@
     --bg-color: #F4F4F0; /* Blanco hueso / papel viejo */
     --text-color: #2C2C2A; /* Gris carbón cálido */
     --accent-color: #C85A17; /* Naranja óxido para detalles urgentes */
-    --denim-color: #6A8A99; /* Azul Denim Vintage para frescura/ruta */
+    --denim-color: #6A8A99; /* Azul Denim Vintage (guardado para el futuro) */
     --nav-bg: rgba(244, 244, 240, 0.95);
 }
 
@@ -211,7 +211,7 @@ header {
 }
 
 /* =========================================
-   SECCIÓN BIO (CARRUSEL IZQ - TEXTO DER)
+   SECCIÓN BIO (REVISTA)
 ========================================= */
 .bio-top-layout {
     display: grid;
@@ -222,9 +222,19 @@ header {
 
 @media (min-width: 768px) {
     .bio-top-layout {
-        grid-template-columns: 1.2fr 0.8fr; /* PC: Carrusel más grande a la izq, texto a la der */
+        grid-template-columns: 1fr 1fr; /* PC: 50% foto, 50% texto para el look revista */
         text-align: left;
     }
+}
+
+/* Nueva clase para la foto vertical */
+.bio-portrait {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    min-height: 400px; 
 }
 
 .bio-bottom-layout {
@@ -246,10 +256,10 @@ header {
 .epk-bio p {
     margin-bottom: 1rem;
     line-height: 1.8;
-    font-size: 1.05rem;
+    font-size: 0.85rem;
 }
 
-/* Carrusel dentro de Bio */
+/* Carrusel dentro de Bio (Mudado abajo) */
 .carousel-container {
     position: relative;
     max-width: 100%;
@@ -279,7 +289,7 @@ header {
 .carousel-btn.prev { left: 0; border-radius: 0 4px 4px 0; }
 .carousel-btn.next { right: 0; border-radius: 4px 0 0 4px; }
 
-/* Botones de Descarga Recuperados y Ajustados con Denim */
+/* Botones de Descarga RESTAURADOS A NARANJA */
 .asset-list {
     list-style: none;
     display: flex;
@@ -303,22 +313,21 @@ header {
     font-size: 0.8rem;
     text-transform: uppercase;
     text-decoration: none;
-    background-color: var(--denim-color); /* Aplicamos el azul denim */
+    background-color: var(--accent-color); /* Vuelve al naranja */
     color: #fff;
     padding: 6px 15px;
     border-radius: 2px;
     transition: 0.3s;
 }
 
-.btn-download:hover { background-color: var(--accent-color); }
+.btn-download:hover { background-color: var(--text-color); }
 
-/* Recuadro Contacto Recuperado y Ajustado con Denim sutil */
+/* Recuadro Contacto RESTAURADO A GRIS CLARO */
 .epk-contact {
     text-align: center;
-    background-color: rgba(106, 138, 153, 0.1); /* Denim muy transparente para frescura */
+    background-color: #e9e9e4; /* Vuelve al gris clarito */
     padding: 2rem;
     border-radius: 4px;
-    border: 1px solid rgba(106, 138, 153, 0.2);
 }
 
 .contact-email {
@@ -366,7 +375,7 @@ header {
     font-size: 1.3rem; 
     margin-bottom: 0.3rem; 
     letter-spacing: 1px; 
-    color: var(--text-color); /* Aplicamos el azul denim a las canciones */
+    color: var(--text-color); /* Vuelve al gris carbón */
 }
 
 .song-type { font-size: 0.85rem; color: #888; margin-bottom: 1.5rem; font-style: italic; }
@@ -375,7 +384,7 @@ header {
     display: flex; 
     flex-direction: column; 
     gap: 0.8rem; 
-    margin-top: auto; /* EMPUJA LOS BOTONES Y LAS FOTOS AL FONDO */
+    margin-top: auto; /* EMPUJA LOS BOTONES AL FONDO */
 }
 
 .btn-listen {
@@ -392,15 +401,7 @@ header {
 }
 .btn-lyrics:hover { color: var(--accent-color); }
 
-.filmstrip-container {
-    display: flex; justify-content: center; gap: 0.5rem;
-    margin-top: 1.5rem; border-top: 1px solid #eee; padding-top: 1rem;
-}
-.filmstrip-item {
-    width: 30%; aspect-ratio: 1 / 1; object-fit: cover;
-    border-radius: 2px; border: 1px solid #eee; transition: transform 0.2s;
-}
-.filmstrip-item:hover { transform: scale(1.1); z-index: 2; }
+/* La .filmstrip-container fue eliminada para optimizar la carga */
 
 /* =========================================
    SECCIÓN FECHAS & SUSCRIPCIÓN
