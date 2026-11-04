@@ -97,7 +97,7 @@ header {
 ========================================= */
 .invierno-banner {
     position: relative;
-    background-color: var(--denim-color, #6A8A99); /* Nuestro Azul Denim Vintage */
+    background-color: var(--denim-color, #121212); /* Nuestro Azul Denim Vintage */
     color: var(--bg-color); /* Letras claras como el fondo */
     padding: 4rem 20px;
     text-align: center;
@@ -173,7 +173,7 @@ header {
 
 .btn-presave-invierno:hover {
     background-color: var(--accent-color); /* Naranja Óxido al pasar el mouse */
-    color: #ffffff;
+    color: #E0E0E0;
     transform: translateY(-2px);
 }
 
