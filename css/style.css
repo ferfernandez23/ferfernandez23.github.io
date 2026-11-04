@@ -8,11 +8,11 @@
 }
 
 :root {
-    --bg-color: #F4F4F0; /* Blanco hueso / papel viejo */
-    --text-color: #2C2C2A; /* Gris carbón cálido */
-    --accent-color: #C85A17; /* Naranja óxido para detalles urgentes */
-    --denim-color: #6A8A99; /* Azul Denim Vintage (guardado para el futuro) */
-    --nav-bg: rgba(244, 244, 240, 0.95);
+  --bg-color: #121212;       /* Fondo Oscuro / Noche */
+  --text-color: #E0E0E0;     /* Gris Claro para lectura */
+  --accent-color: #C05849;   /* Mantenemos tu Naranja Óxido para mantener el hilo conductor */
+  --highlight: #8A8A8A;      /* Gris intermedio para sombras */
+  --denim: #1A252C;          /* Un azul casi negro, profundo y frío */
 }
 
 html {
@@ -212,7 +212,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(244, 244, 240, 0.6);
+    background: rgba(0, 0, 0, 0.75);
     z-index: 1;
 }
 
